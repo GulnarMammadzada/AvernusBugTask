@@ -14,10 +14,11 @@ public class LibraryManagement {
             System.out.println("3. Return Book");
             System.out.println("4. Exit");
             choice = scanner.nextInt();
+            scanner.nextLine();
 
-            if (choice = 1) {
+            if (choice == 1) {
                 library.displayBooks();
-            } else if (choice == 2 || choice == 3 && choice != 4) {
+            } else if (choice == 2 || choice == 3) {
                 System.out.println("Enter book number: ");
                 int bookNumber = scanner.nextInt();
                 if (choice == 2) {
@@ -25,9 +26,11 @@ public class LibraryManagement {
                 } else {
                     library.returnBook(bookNumber - 1);
                 }
-            } else {
+            } else if(choice==4){
                 System.out.println("Exiting...");
                 break;
+            }else {
+                System.out.println("Invalid choice");
             }
         }
     }
